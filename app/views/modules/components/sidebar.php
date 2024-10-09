@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="home" class="brand-link">
         <img src="../public/img/logo.png" alt="Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Refaccionaria</span>
@@ -13,7 +13,7 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="home" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -21,7 +21,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="search" class="nav-link">
                         <i class="nav-icon fas fa-search"></i>
                         <p>
                             Búsqueda
@@ -32,7 +32,7 @@
                 <li class="nav-header">GESTIÓN</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="products" class="nav-link">
                         <i class="nav-icon fas fa-archive"></i>
                         <p>
                             Productos
@@ -40,7 +40,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a class="nav-link">
                         <i class="nav-icon fas fa-shopping-bag"></i>
                         <p>
                             Ventas
@@ -49,19 +49,19 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="sales/new-sale" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Crear venta</p>
+                                <p>Nueva venta</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="sales/manage-sales" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Administrar ventas</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="sales/sales-report" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Reporte de ventas</p>
                             </a>
@@ -69,7 +69,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="customers" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Clientes
@@ -77,15 +77,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="suppliers" class="nav-link">
                         <i class="nav-icon fas fa-truck"></i>
                         <p>
-                            Provedoores
+                            Proveedores
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="brands" class="nav-link">
                         <i class="nav-icon fas fa-tags"></i>
                         <p>
                             Marcas
@@ -96,13 +96,13 @@
                 <li class="nav-header">ADMINISTRACIÓN</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="users" class="nav-link">
                         <i class="nav-icon fas fa-user-friends"></i>
                         <p>Usuarios</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="roles" class="nav-link">
                         <i class="nav-icon fas fa-shield-alt"></i>
                         <p>Roles</p>
                     </a>
