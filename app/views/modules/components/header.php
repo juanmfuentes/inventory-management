@@ -14,7 +14,10 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" role="button">
-                <i class="fas fa-user"></i>
+                <div class="d-flex justify-content-center align-items-center">
+                    <i class="fas fa-user mr-2"></i>
+                    <p href="#" class="text-secondary m-0"> <?php echo $_SESSION["user"];?></p>
+                </div>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <div class="user-panel py-3 d-flex justify-content-center">
@@ -22,7 +25,7 @@
                         <img src="../public/img/logo.png" class="img-circle elevation-2" alt="User">
                     </div>
                     <div class="info">
-                        <p href="#" class="d-block text-secondary">Nombre de usuario</p>
+                        <p href="#" class="d-block text-secondary"> <?php echo $_SESSION["user"]; ?></p>
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>

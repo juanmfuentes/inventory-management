@@ -101,12 +101,6 @@
                         <p>Usuarios</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="roles" class="nav-link">
-                        <i class="nav-icon fas fa-shield-alt"></i>
-                        <p>Roles</p>
-                    </a>
-                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

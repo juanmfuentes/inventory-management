@@ -6,22 +6,28 @@
         </div>
         <div class="card-body">
             <p class="login-box-msg h3">¡Bienvenido!</p>
+            <p class="login-box-msg h2 font-weight-light"><span class="text-bold">Refaccionaria</span><br>Don Lalo</p>
 
             <form action="#" method="post">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Nombre de usuario" name="postUser" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-user"></span>
                         </div>
                     </div>
+                    <input type="text" class="form-control" placeholder="Nombre de usuario" name="postUser" required>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Contraseña" name="postPassword" required>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
                         </div>
+                    </div>
+                    <input type="password" class="form-control" placeholder="Contraseña" id="inputPassword" name="postPassword" required>
+                    <div class="input-group-append">
+                        <span class="input-group-text btn" id="togglePassword1">
+                            <i class="fas fa-eye"></i>
+                        </span>
                     </div>
                 </div>
                 <div class="pt-3">
@@ -29,8 +35,8 @@
                 </div>
 
                 <?php
-                    $login = new ControllerUsers();
-                    $login -> ctrAuthUser();
+                $login = new ControllerUsers();
+                $login->ctrAuthUser();
                 ?>
 
             </form>
