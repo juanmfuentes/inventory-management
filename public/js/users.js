@@ -76,7 +76,7 @@ $(document).on("click", ".btnActivate", function () {
 
 })
 
-// USER UNIQUE
+// Función que envía mensaje diciendo que el usuario ya existe
 $("#inputUser").change(function () {
 
     setTimeout(function () {
@@ -132,3 +132,52 @@ $(document).on("click", ".btnDeleteUser", function () {
     });
 
 })
+
+// Función para alternar la visibilidad de la contraseña
+function togglePassword(inputId, toggleId) {
+    const passwordInput = document.getElementById(inputId);
+    const passwordIcon = document.getElementById(toggleId).querySelector('i');
+
+    // Alternar tipo de input
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'; // Mostrar la contraseña
+        passwordIcon.classList.remove('fa-eye');
+        passwordIcon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password'; // Ocultar la contraseña
+        passwordIcon.classList.remove('fa-eye-slash');
+        passwordIcon.classList.add('fa-eye');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const togglePassword1 = document.getElementById('togglePassword1');
+    const togglePassword2 = document.getElementById('togglePassword2');
+    const togglePassword3 = document.getElementById('togglePassword3');
+    const togglePassword4 = document.getElementById('togglePassword4');
+
+    // Verificar si el elemento existe antes de añadir el evento
+    if (togglePassword1) {
+        togglePassword1.addEventListener('click', function() {
+            togglePassword('inputPassword', 'togglePassword1');
+        });
+    }
+
+    if (togglePassword2) {
+        togglePassword2.addEventListener('click', function() {
+            togglePassword('inputConfirmPassword', 'togglePassword2');
+        });
+    }
+
+    if (togglePassword3) {
+        togglePassword3.addEventListener('click', function() {
+            togglePassword('editPassword', 'togglePassword3');
+        });
+    }
+
+    if (togglePassword4) {
+        togglePassword4.addEventListener('click', function() {
+            togglePassword('editConfirmPassword', 'togglePassword4');
+        });
+    }
+});

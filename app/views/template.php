@@ -57,7 +57,7 @@ if (isset($_SESSION["auth_user"]) && $_SESSION["auth_user"] == true) {
             $_GET["route"] == "suppliers" ||
             $_GET["route"] == "brands" ||
             $_GET["route"] == "users" ||
-            $_GET["route"] == "roles" ||
+            $_GET["route"] == "categories" ||
             $_GET["route"] == "logout"
         ) {
             include "modules/" . $_GET["route"] . ".php";
@@ -99,6 +99,7 @@ if (isset($_SESSION["auth_user"]) && $_SESSION["auth_user"] == true) {
 
 <!-- js -->
 <script src="../public/js/users.js"></script>
+<script src="../public/js/categories.js"></script>
 <script src="../public/js/template.js"></script>
 </body>
 

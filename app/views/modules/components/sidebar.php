@@ -92,6 +92,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="categories" class="nav-link">
+                        <i class="nav-icon fa fa-th"></i>
+                        <p>
+                            Categorías
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-header">ADMINISTRACIÓN</li>
 
