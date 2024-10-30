@@ -1,38 +1,38 @@
 <?php
 
-class ControllerBrands
+class ControllerLocations
 {
 
-    static public function ctrNewBrand()
+    static public function ctrNewLocation()
     {
         // Verifica si se ha enviado el formulario de nuevo usuario
-        if (isset($_POST["brandName"])) {
+        if (isset($_POST["locationName"])) {
 
             if (
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["brandName"]) &&
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["brandDescription"])
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["locationName"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["locationDescription"])
             ) {
 
-                $table = "brands";
+                $table = "locations";
 
                 $data = array(
-                    "name" => $_POST["brandName"],
-                    "description" => $_POST["brandDescription"]
+                    "name" => $_POST["locationName"],
+                    "description" => $_POST["locationDescription"]
                 );
 
-                $response = BrandsModel::mdlNewBrand($table, $data);
+                $response = LocationsModel::mdlNewLocation($table, $data);
 
                 if ($response == true) {
                     echo '
                         <script>
                             Swal.fire({
                                 icon: "success",
-                                title: "¡La marca se ha creado correctamente!",
+                                title: "¡La ubicación se ha creado correctamente!",
                                 showConfirmButton: true,
                                 confirmButtonText: "Cerrar"
                             }).then((result)=> {
                                 if(result.value) {
-                                    window.location = "brands"; // Redirige a la página de usuarios
+                                    window.location = "locations"; // Redirige a la página de usuarios
                                 }
                             });
                         </script>';
@@ -48,7 +48,7 @@ class ControllerBrands
                             confirmButtonText: "Cerrar"
                         }).then((result)=> {
                             if(result.value) {
-                                window.location = "brands"; // Redirige a la página de usuarios
+                                window.location = "locations"; // Redirige a la página de usuarios
                             }
                         });
                     </script>';
@@ -56,37 +56,37 @@ class ControllerBrands
         }
     }
 
-    static public function ctrShowBrands($item, $value)
+    static public function ctrShowLocations($item, $value)
     {
 
-        $table = "brands";
-        $response = BrandsModel::mdlShowBrands($table, $item, $value);
+        $table = "locations";
+        $response = LocationsModel::mdlShowLocations($table, $item, $value);
 
         return $response;
     }
 
-    static public function ctrEditBrand()
+    static public function ctrEditLocation()
     {   
         // Verifica si se ha enviado el formulario de edición
-        if (isset($_POST["editBrandId"])) {
+        if (isset($_POST["editLocationId"])) {
 
             // Verifica que los nombres y el usuario no contengan caracteres especiales
             if (
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editBrandName"]) &&
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["editBrandDescription"])
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editLocationName"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["editLocationDescription"])
             ) {
 
-                $table = "brands"; // Define la tabla a actualizar
+                $table = "locations"; // Define la tabla a actualizar
 
                 // Prepara los datos para la actualización
                 $data = array(
-                    "id" => $_POST["editBrandId"],
-                    "name" => $_POST["editBrandName"],
-                    "description" => $_POST["editBrandDescription"],
+                    "id" => $_POST["editLocationId"],
+                    "name" => $_POST["editLocationName"],
+                    "description" => $_POST["editLocationDescription"],
                 );
 
                 // Llama al modelo para actualizar los datos
-                $response = BrandsModel::mdlEditBrand($table, $data);
+                $response = LocationsModel::mdlEditLocation($table, $data);
 
                 // Verifica si la actualización fue exitosa
                 if ($response == true) {
@@ -99,7 +99,7 @@ class ControllerBrands
                             confirmButtonText: "Cerrar"
                         }).then((result)=> {
                             if(result.value) {
-                                window.location = "brands"; // Redirige a la página de usuarios
+                                window.location = "locations"; // Redirige a la página de usuarios
                             }
                         });
                     </script>';
@@ -115,7 +115,7 @@ class ControllerBrands
                         confirmButtonText: "Cerrar"
                     }).then((result)=> {
                         if(result.value) {
-                            window.location = "brands"; // Redirige a la página de usuarios
+                            window.location = "locations"; // Redirige a la página de usuarios
                         }
                     });
                 </script>';
@@ -123,27 +123,27 @@ class ControllerBrands
         }
     }
 
-    //Borrar marca
-    static public function ctrDeleteBrand()
+    //Borrar ubicación
+    static public function ctrDeleteLocation()
     {
-        if (isset($_GET["idBrand"])) {
+        if (isset($_GET["idLocation"])) {
 
-            $table = "brands";
-            $data = $_GET["idBrand"];
+            $table = "locations";
+            $data = $_GET["idLocation"];
 
-            $response = BrandsModel::mdlDeleteBrand($table, $data);
+            $response = LocationsModel::mdlDeleteLocation($table, $data);
 
             if ($response == true) {
                 echo '
                 <script>
                     Swal.fire({
                         icon: "success",
-                        title: "¡La marca se ha eliminado correctamente!",
+                        title: "¡La ubicación se ha eliminado correctamente!",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
                     }).then((result)=> {
                         if(result.value) {
-                            window.location = "brands"; // Redirige a la página de usuarios
+                            window.location = "locations"; // Redirige a la página de usuarios
                         }
                     });
                 </script>';

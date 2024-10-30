@@ -2,7 +2,7 @@
 <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="home" class="brand-link">
-        <img src="../public/img/logo.png" alt="Logo" class="brand-image img-circle elevation-3"
+        <img src="../public/img/logo-sidebar.png" alt="Logo" class="brand-image"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Refaccionaria</span>
     </a>
@@ -39,7 +39,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link">
                         <i class="nav-icon fas fa-shopping-bag"></i>
                         <p>
@@ -67,15 +67,15 @@
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li class="nav-item">
+                </li> -->
+                <!-- <li class="nav-item">
                     <a href="customers" class="nav-link">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Clientes
                         </p>
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a href="suppliers" class="nav-link">
                         <i class="nav-icon fas fa-truck"></i>
@@ -109,6 +109,18 @@
                         <p>Usuarios</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="roles" class="nav-link">
+                        <i class="nav-icon fas fa-shield-alt"></i>
+                        <p>Roles</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="locations" class="nav-link">
+                        <i class="nav-icon fas fa-location-arrow"></i>
+                        <p>Ubicaciones</p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -118,7 +130,7 @@
     <div class="sidebar-custom">
         <ul class="nav nav-sidebar flex-column">
             <li class="nav-item">
-                <a href="#" class="btn btn-danger btn-block">
+                <a href="logout" class="btn btn-danger btn-block">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
                 </a>
             </li>

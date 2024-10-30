@@ -2,10 +2,10 @@
 
 require_once "connection.php";
 
-class SuppliersModel
+class RolesModel
 {
 
-    static public function mdlNewSupplier($table, $data)
+    static public function mdlNewRole($table, $data)
     {
         $stmt = dbConnection::connect()->prepare("INSERT INTO $table(name, description) 
         VALUES (:name, :description)");
@@ -23,7 +23,7 @@ class SuppliersModel
         $stmt = null;
     }
 
-    static public function mdlShowSuppliers($table, $item, $value)
+    static public function mdlShowRoles($table, $item, $value)
     {
         if ($item != null) {
 
@@ -50,7 +50,7 @@ class SuppliersModel
         $stmt = null;
     }
 
-    static public function mdlEditSupplier($table, $data)
+    static public function mdlEditRole($table, $data)
     {
         $stmt = dbConnection::connect()->prepare("UPDATE $table SET name = :name, description = :description WHERE id = :id");
 
@@ -68,7 +68,7 @@ class SuppliersModel
         $stmt = null;
     }
 
-    static public function mdlDeleteSupplier($table, $data)
+    static public function mdlDeleteRole($table, $data)
     {
 
         $stmt = dbConnection::connect()->prepare("DELETE FROM $table WHERE id = :id");

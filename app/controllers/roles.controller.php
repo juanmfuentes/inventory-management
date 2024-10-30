@@ -1,38 +1,38 @@
 <?php
 
-class ControllerBrands
+class ControllerRoles
 {
 
-    static public function ctrNewBrand()
+    static public function ctrNewRole()
     {
         // Verifica si se ha enviado el formulario de nuevo usuario
-        if (isset($_POST["brandName"])) {
+        if (isset($_POST["roleName"])) {
 
             if (
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["brandName"]) &&
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["brandDescription"])
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["roleName"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["roleDescription"])
             ) {
 
-                $table = "brands";
+                $table = "roles";
 
                 $data = array(
-                    "name" => $_POST["brandName"],
-                    "description" => $_POST["brandDescription"]
+                    "name" => $_POST["roleName"],
+                    "description" => $_POST["roleDescription"]
                 );
 
-                $response = BrandsModel::mdlNewBrand($table, $data);
+                $response = RolesModel::mdlNewRole($table, $data);
 
                 if ($response == true) {
                     echo '
                         <script>
                             Swal.fire({
                                 icon: "success",
-                                title: "¡La marca se ha creado correctamente!",
+                                title: "¡El rol se ha creado correctamente!",
                                 showConfirmButton: true,
                                 confirmButtonText: "Cerrar"
                             }).then((result)=> {
                                 if(result.value) {
-                                    window.location = "brands"; // Redirige a la página de usuarios
+                                    window.location = "roles"; // Redirige a la página de usuarios
                                 }
                             });
                         </script>';
@@ -48,7 +48,7 @@ class ControllerBrands
                             confirmButtonText: "Cerrar"
                         }).then((result)=> {
                             if(result.value) {
-                                window.location = "brands"; // Redirige a la página de usuarios
+                                window.location = "roles"; // Redirige a la página de usuarios
                             }
                         });
                     </script>';
@@ -56,37 +56,37 @@ class ControllerBrands
         }
     }
 
-    static public function ctrShowBrands($item, $value)
+    static public function ctrShowRoles($item, $value)
     {
 
-        $table = "brands";
-        $response = BrandsModel::mdlShowBrands($table, $item, $value);
+        $table = "roles";
+        $response = RolesModel::mdlShowRoles($table, $item, $value);
 
         return $response;
     }
 
-    static public function ctrEditBrand()
+    static public function ctrEditRole()
     {   
         // Verifica si se ha enviado el formulario de edición
-        if (isset($_POST["editBrandId"])) {
+        if (isset($_POST["editRoleId"])) {
 
             // Verifica que los nombres y el usuario no contengan caracteres especiales
             if (
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editBrandName"]) &&
-                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["editBrandDescription"])
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ ]+$/', $_POST["editRoleName"]) &&
+                preg_match('/^[a-zA-Z0-9ñÑáéíóúÁÉÍÓÚ,. ]*$/', $_POST["editRoleDescription"])
             ) {
 
-                $table = "brands"; // Define la tabla a actualizar
+                $table = "roles"; // Define la tabla a actualizar
 
                 // Prepara los datos para la actualización
                 $data = array(
-                    "id" => $_POST["editBrandId"],
-                    "name" => $_POST["editBrandName"],
-                    "description" => $_POST["editBrandDescription"],
+                    "id" => $_POST["editRoleId"],
+                    "name" => $_POST["editRoleName"],
+                    "description" => $_POST["editRoleDescription"],
                 );
 
                 // Llama al modelo para actualizar los datos
-                $response = BrandsModel::mdlEditBrand($table, $data);
+                $response = RolesModel::mdlEditRole($table, $data);
 
                 // Verifica si la actualización fue exitosa
                 if ($response == true) {
@@ -99,7 +99,7 @@ class ControllerBrands
                             confirmButtonText: "Cerrar"
                         }).then((result)=> {
                             if(result.value) {
-                                window.location = "brands"; // Redirige a la página de usuarios
+                                window.location = "roles"; // Redirige a la página de usuarios
                             }
                         });
                     </script>';
@@ -115,7 +115,7 @@ class ControllerBrands
                         confirmButtonText: "Cerrar"
                     }).then((result)=> {
                         if(result.value) {
-                            window.location = "brands"; // Redirige a la página de usuarios
+                            window.location = "roles"; // Redirige a la página de usuarios
                         }
                     });
                 </script>';
@@ -123,27 +123,27 @@ class ControllerBrands
         }
     }
 
-    //Borrar marca
-    static public function ctrDeleteBrand()
+    //Borrar rol
+    static public function ctrDeleteRole()
     {
-        if (isset($_GET["idBrand"])) {
+        if (isset($_GET["idRole"])) {
 
-            $table = "brands";
-            $data = $_GET["idBrand"];
+            $table = "roles";
+            $data = $_GET["idRole"];
 
-            $response = BrandsModel::mdlDeleteBrand($table, $data);
+            $response = RolesModel::mdlDeleteRole($table, $data);
 
             if ($response == true) {
                 echo '
                 <script>
                     Swal.fire({
                         icon: "success",
-                        title: "¡La marca se ha eliminado correctamente!",
+                        title: "¡El rol se ha eliminado correctamente!",
                         showConfirmButton: true,
                         confirmButtonText: "Cerrar"
                     }).then((result)=> {
                         if(result.value) {
-                            window.location = "brands"; // Redirige a la página de usuarios
+                            window.location = "roles"; // Redirige a la página de usuarios
                         }
                     });
                 </script>';

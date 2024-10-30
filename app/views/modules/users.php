@@ -61,10 +61,17 @@
                                         }
 
                                         echo '<tr>
-                                        <td>' . $value["id"] . '</td>
+                                        <td>' . ($key + 1) . '</td>
                                         <td>' . $value["user"] . '</td>
-                                        <td>' . $value["first_name"] . ' ' . $value["last_name"] . '</td>
-                                        <td> ' . $value["rol"] . '</td>
+                                        <td>' . $value["first_name"] . ' ' . $value["last_name"] . '</td>';
+
+                                        $item = "id";
+                                        $valueRol = $value["rol"];
+
+                                        $rol = ControllerRoles::ctrShowRoles($item, $valueRol);
+
+                                        echo '
+                                        <td> ' . $rol["name"] . '</td>
                                         <td>' . $lastLogin . '</td>';
 
                                         if ($value["status"] != 0) {
@@ -173,12 +180,21 @@
                         <label class="col-sm-2 col-form-label font-weight-normal">Rol</label>
                         <div class="input-group col-sm-10">
                             <select class="form-control" name="selectRol" required>
-                                <option value="" disabled selected hidden>Selecciona una opción</option>
-                                <option value="Administrador">Administrador</option>
-                                <option value="Gerente de inventario">Gerente de inventario</option>
-                                <option value="Encargado de almacén">Encargado de almacén</option>
-                                <option value="Vendedor">Vendedor</option>
-                                <option value="Contador">Contador</option>
+                                <option value="" disabled selected hidden>Selecciona un rol</option>
+
+                                <?php
+
+                                $item = null;
+                                $value = null;
+
+                                $roles = ControllerRoles::ctrShowRoles($item, $value);
+
+                                foreach ($roles as $key => $value) {
+                                    echo '<option value="' . $value["id"] . '">' . $value["name"] . '</option>';
+                                }
+
+                                ?>
+
                             </select>
                         </div>
                     </div>
@@ -252,13 +268,10 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label font-weight-normal">Rol</label>
                         <div class="input-group col-sm-10">
-                            <select class="form-control" name="editRol">
-                                <option value="" hidden id="editRol"></option>
-                                <option value="Administrador">Administrador</option>
-                                <option value="Gerente de inventario">Gerente de inventario</option>
-                                <option value="Encargado de almacén">Encargado de almacén</option>
-                                <option value="Vendedor">Vendedor</option>
-                                <option value="Contador">Contador</option>
+                            <select class="form-control" name="editRol" readonly required>
+
+                                <option id="editRole"></option>
+                                
                             </select>
                         </div>
                     </div>

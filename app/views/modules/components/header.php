@@ -15,24 +15,23 @@
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" role="button">
                 <div class="d-flex justify-content-center align-items-center">
-                    <i class="fas fa-user mr-2"></i>
-                    <p href="#" class="text-secondary m-0"> <?php echo $_SESSION["user"];?></p>
+                    <i class="fas fa-user-circle mr-2"></i>
+                    <p href="#" class="text-secondary m-0 text-uppercase"> <?php echo $_SESSION["user"]; ?></p>
                 </div>
             </a>
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <div class="user-panel py-3 d-flex justify-content-center">
+            <div class="dropdown-menu dropdown-menu dropdown-menu-right">
+                <div class="d-flex justify-content-center align-items-center">
                     <div class="image">
-                        <img src="../public/img/logo.png" class="img-circle elevation-2" alt="User">
+                        <i class="fas fa-user-circle mr-2"></i>
                     </div>
                     <div class="info">
-                        <p href="#" class="d-block text-secondary"> <?php echo $_SESSION["user"]; ?></p>
+                        <p href="#" class="d-block text-secondary m-0 text-uppercase"> <?php echo $_SESSION["user"]; ?></p>
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <a href="#" class="dropdown-item">
+                <!-- <a href="#" class="dropdown-item">
                     <i class="fas fa-edit mr-2"></i> Editar perfil
-                </a>
-                <div class="dropdown-divider"></div>
+                </a> -->
                 <a href="logout" class="dropdown-item">
                     <i class="fas fa-sign-out-alt mr-2"></i> Cerrar Sesión
                 </a>

@@ -14,6 +14,28 @@ $(document).on("click", ".btnEditUser", function () {
         processData: false,
         dataType: "json",
         success: function (response) {
+
+            var dataRole = new FormData();
+            dataRole.append("idRole", response["rol"])
+
+            $.ajax({
+                url: "../ajax/roles.ajax.php",
+                method: "POST",
+                data: dataRole,
+                cache: false,
+                contentType: false,
+                processData: false,
+                dataType: "json",
+                success: function (response) {
+                    $("#editRole").val(response["id"]);
+                    $("#editRole").html(response["name"]);
+
+
+                }
+            })
+
+
+
             $("#editUserId").val(response["id"]);
             $("#editFirstName").val(response["first_name"]);
             $("#editLastName").val(response["last_name"]);
@@ -118,7 +140,7 @@ $(document).on("click", ".btnDeleteUser", function () {
     Swal.fire({
         icon: "warning",
         title: "¿Está seguro de borrar el usuario?",
-        text: "¡Si no lo está puede cancelar la acción!",
+        text: "¡No se puede deshacer esta acción!",
         showConfirmButton: true,
         showCancelButton: true,
         confirmButtonText: "Borrar usuario",

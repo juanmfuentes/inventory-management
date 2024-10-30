@@ -49,7 +49,7 @@
                                     foreach ($categories as $key => $value) {
                                         echo '
                                         <tr>
-                                            <td>' . $value["id"] . '</td>
+                                            <td>' . ($key + 1) . '</td>
                                             <td>' . $value["name"] . '</td>
                                             <td>' . $value["description"] . '</td>
                                             <td>
@@ -91,7 +91,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-user-plus pr-2"></i>Nueva categoría</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-th pr-2"></i>Nueva categoría</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -134,7 +134,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-user-plus pr-2"></i>Editar categoría</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-th pr-2"></i>Editar categoría</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

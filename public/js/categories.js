@@ -13,7 +13,6 @@ $(document).on("click", ".btnEditCategory", function () {
         processData: false,
         dataType: "json",
         success: function (response) {
-            console.log(response); // Añadir esto para verificar la respuesta
             $("#editCategoryId").val(response["id"]);
             $("#editCategoryName").val(response["name"]);
             $("#editCategoryDescription").val(response["description"]);
@@ -27,11 +26,11 @@ $(document).on("click", ".btnDeleteCategory", function () {
 
     Swal.fire({
         icon: "warning",
-        title: "¿Está seguro de desea borrar la categoría?",
+        title: "¿Está seguro que desea borrar la categoría?",
         text: "¡No se puede deshacer esta acción!",
         showConfirmButton: true,
         showCancelButton: true,
-        confirmButtonText: "Borrar usuario",
+        confirmButtonText: "Borrar categoría",
         confirmButtonColor: "#007bff",
         cancelButtonText: "Cancelar",
         cancelButtonColor: "#dc3545"
