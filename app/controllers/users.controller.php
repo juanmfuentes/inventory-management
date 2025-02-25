@@ -51,10 +51,18 @@ class ControllerUsers
                             $lastLogin = UsersModel::mdlUpdateUser($table, $item1, $value1, $item2, $value2);
 
                             if ($lastLogin == true) {
-                                echo '
+
+                                if ($_SESSION["rol"] == 1) {
+                                    echo '
                                     <script>
-                                        window.location = "home";
+                                        window.location = "home/home";
                                     </script>';
+                                } else if ($_SESSION["rol"] == 3){
+                                    echo '
+                                    <script>
+                                        window.location = "search";
+                                    </script>';
+                                }
                             }
                         } else {
 

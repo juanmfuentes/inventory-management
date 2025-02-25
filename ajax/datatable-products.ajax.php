@@ -46,7 +46,9 @@ class TableProducts
             }
 
 
-            $buttons = "<div class='btn-group d-flex'><button type='button' class='btn btn-sm btn-primary btnReadProduct' idProduct='" . $products[$i]["id"] . "' data-toggle='modal' data-target='#modalReadProduct'><i class='fas fa-eye'></i></button><button type='button' class='btn btn-sm btn-warning btnEditProduct' style='color:white;' idProduct='" . $products[$i]["id"] . "' data-toggle='modal' data-target='#modalEditProduct'><i class='fas fa-edit'></i></button><button type='button' class='btn btn-sm btn-danger btnDeleteProduct' idProduct='" . $products[$i]["id"] . "' description='" . $products[$i]["description"] . "' image='" . $products[$i]["image"] . "' data-toggle='modal' data-target='#modalDeleteProduct'><i class='fas fa-trash'></i></button></div>";
+            $buttons = "<div class='btn-group d-flex'><button type='button' class='btn btn-sm btn-warning btnEditProduct' style='color:white;' idProduct='" . $products[$i]["id"] . "' data-toggle='modal' data-target='#modalEditProduct'><i class='fas fa-edit'></i></button><button type='button' class='btn btn-sm btn-danger btnDeleteProduct' idProduct='" . $products[$i]["id"] . "' description='" . $products[$i]["description"] . "' image='" . $products[$i]["image"] . "' data-toggle='modal' data-target='#modalDeleteProduct'><i class='fas fa-trash'></i></button></div>";
+
+            // <button type='button' class='btn btn-sm btn-primary btnReadProduct' idProduct='" . $products[$i]["id"] . "' data-toggle='modal' data-target='#modalReadProduct'><i class='fas fa-eye'></i></button> BOTON READ PRODUCTO, VA ARRIBA AL PRINCIPIO
 
             $dataJson .= '[
                         "' . ($i + 1) . '",

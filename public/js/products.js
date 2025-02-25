@@ -49,7 +49,7 @@ $('.tableProducts').DataTable({
             "sSortDescending": "Ordenar de fomra descendente",
         },
     },
-    "responsive": true
+    "responsive": true 
 });
 
 
@@ -178,7 +178,6 @@ $(".tableProducts tbody").on("click", ".btnEditProduct", function () {
         }
     });
 });
-
 
 
 $(document).on("click", ".btnDeleteProduct", function () {

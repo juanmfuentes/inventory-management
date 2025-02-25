@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="home">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="home/home">Inicio</a></li>
                         <li class="breadcrumb-item active">Error 404</li>
                     </ol>
                 </div>
@@ -27,7 +27,7 @@
 
                 <p>
                     No se ha encontrado la página que buscas.
-                    Revisa el panel lateral para ver todas las opciones disponibles o da <a href="home">click aquí</a> para volver al inicio.
+                    Revisa el panel lateral para ver todas las opciones disponibles o da <a href="home/home">click aquí</a> para volver al inicio.
                 </p>
 
             </div>

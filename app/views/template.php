@@ -47,7 +47,7 @@ if (isset($_SESSION["auth_user"]) && $_SESSION["auth_user"] == true) {
 
     if (isset($_GET["route"])) {
         if (
-            $_GET["route"] == "home" ||
+            $_GET["route"] == "home/home" ||
             $_GET["route"] == "search" ||
             $_GET["route"] == "products" ||
             $_GET["route"] == "sales/new-sale" ||
@@ -67,7 +67,7 @@ if (isset($_SESSION["auth_user"]) && $_SESSION["auth_user"] == true) {
             include "modules/404.php";
         }
     } else {
-        include "modules/home.php";
+        include "modules/home/home.php";
     }
 
     include "modules/components/footer.php";
@@ -98,6 +98,8 @@ if (isset($_SESSION["auth_user"]) && $_SESSION["auth_user"] == true) {
 <script src="../lib/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="../lib/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="../lib/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<!-- Chart Js -->
+<script src="../lib/plugins/chart.js/Chart.min.js"></script>
 
 <!-- js -->
 <script src="../public/js/users.js"></script>

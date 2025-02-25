@@ -1,7 +1,7 @@
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="home" class="brand-link">
+    <a href="home/home" class="brand-link">
         <img src="../public/img/logo-sidebar.png" alt="Logo" class="brand-image"
             style="opacity: .8">
         <span class="brand-text font-weight-light">Refaccionaria</span>
@@ -13,21 +13,21 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-legacy nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
-                    <a href="home" class="nav-link active">
+                    <a href="home/home" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="search" class="nav-link">
                         <i class="nav-icon fas fa-search"></i>
                         <p>
                             Búsqueda
                         </p>
                     </a>
-                </li>
+                </li> -->
 
                 <li class="nav-header">GESTIÓN</li>
 
@@ -94,7 +94,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="categories" class="nav-link">
-                        <i class="nav-icon fa fa-th"></i>
+                        <i class="nav-icon fas fa-th-large"></i>
                         <p>
                             Categorías
                         </p>
@@ -138,3 +138,5 @@
     </div>
     <!-- /.sidebar-custom -->
 </aside>
+
+

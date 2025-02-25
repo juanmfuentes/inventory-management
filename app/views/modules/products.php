@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="home">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="home/home">Inicio</a></li>
                         <li class="breadcrumb-item active">Productos</li>
                     </ol>
                 </div>
@@ -477,6 +477,7 @@
         </div>
     </div>
 </div>
+
 
 <?php
 $deleteProduct = new ControllerProducts();
